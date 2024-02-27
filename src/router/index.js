@@ -1,27 +1,24 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-    }
-  }
-]
+import { createRouter, createWebHistory } from 'vue-router';
+import routes from '/src/router/routes';
+import useStore from 'pinia'; // Assuming useStore is imported correctly
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+router.beforeEach((to, from, next) => {
+  const middleware = to.meta.middleware;
+  const context = { to, from, next, router, useStore };
+
+  if (!middleware) {
+    return next();
+  }
+
+  middleware[0]({
+    ...context,
+    next: PipeLine(context, middleware, 1),
+  });
+});
+
+export default router;

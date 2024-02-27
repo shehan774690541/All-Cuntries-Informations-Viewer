@@ -1,41 +1,35 @@
 {
-  "name": "country-info",
+  "name": "e-cards",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@mdi/font": "5.9.55",
+    "@vuelidate/core": "^2.0.3",
+    "axios": "^1.6.4",
+    "core-js": "^3.8.3",
+    "cropperjs": "^1.6.1",
+    "jspdf": "^2.5.1",
+    "pinia": "^2.1.7",
+    "roboto-fontface": "0.10.0",
+    "sass-loader": "^10.0.0",
+    "vee-validate": "^4.12.5",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.3"
+    "vue-advanced-cropper": "^2.8.8",
+    "vue-router": "^4.0.13",
+    "vuetify": "^3.4.0-beta.1",
+    "vuex": "^4.1.0",
+    "webfontloader": "^1.0.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 2020
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
-  ]
+    "@vue/cli-service": "^5.0.8",
+    "vue-cli-plugin-vuetify": "~2.5.8",
+    "webpack-plugin-vuetify": "^2.0.0-alpha.0"
+  }
 }
